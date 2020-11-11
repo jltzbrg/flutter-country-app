@@ -40,8 +40,8 @@ class MyAppState extends State<MyApp> {
                     .loadString('assets/country.json'),
                 builder: (context, snapshot) {
                   List<Country> countries = parseJosn(snapshot.data.toString());
-                  //TODO: Eine Möglichkeit überlegen, wie man mit isNotEmpty umgehen soll
-                  return !countries.isEmpty
+
+                  return countries.isNotEmpty
                       ? CountyList(country: countries)
                       : Center(child: CircularProgressIndicator());
                 }),
